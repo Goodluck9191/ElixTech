@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ElixTech – Websites and software for businesses</title>
+<meta name="description" content="ElixTech builds websites, online shops and custom software for businesses in Tanzania and abroad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--fg:#0A0A0A;--soft:#F7F7F7;--muted:#737373;--line:#E5E5E5;--inv-bg:#0A0A0A;--inv-fg:#fff;--inv-line:#2a2a2a;--inv-muted:#a3a3a3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A0A0A;--fg:#fff;--soft:#141414;--muted:#a3a3a3;--line:#2a2a2a;--inv-bg:#fff;--inv-fg:#0A0A0A;--inv-line:#E5E5E5;--inv-muted:#737373}}
+:root[data-theme="dark"]{--bg:#0A0A0A;--fg:#fff;--soft:#141414;--muted:#a3a3a3;--line:#2a2a2a;--inv-bg:#fff;--inv-fg:#0A0A0A;--inv-line:#E5E5E5;--inv-muted:#737373}
+html{scroll-padding-top:calc(72px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:20px;letter-spacing:-.03em;text-decoration:none}
+nav{display:flex;gap:24px;align-items:center}
+nav a{text-decoration:none;font-size:14px;color:var(--muted)}
+nav a:hover{color:var(--fg)}
+.btn{display:inline-block;background:var(--fg);color:var(--bg);border:1px solid var(--fg);padding:13px 24px;font:600 15px Inter,sans-serif;text-decoration:none;cursor:pointer;border-radius:2px}
+.btn:hover{opacity:.85}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--fg);opacity:1}
+nav .btn{padding:8px 16px;font-size:14px;color:var(--bg)}
+nav .btn:hover{color:var(--bg)}
+.hero{padding:96px 0 88px}
+h1{font-size:clamp(44px,9vw,112px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin:0 0 32px;max-width:14ch}
+.hero p{font-size:clamp(18px,2.2vw,22px);color:var(--muted);max-width:56ch;margin:0 0 36px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+section{padding:88px 0}
+h2{font-size:clamp(30px,5vw,52px);letter-spacing:-.035em;line-height:1.05;font-weight:800;margin:0 0 16px;max-width:20ch}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 48px}
+.services{background:var(--inv-bg);color:var(--inv-fg)}
+.services .lead{color:var(--inv-muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));border-top:1px solid var(--inv-line)}
+.grid div{padding:32px 28px 32px 0;border-bottom:1px solid var(--inv-line)}
+.grid h3{font-size:22px;letter-spacing:-.02em;margin:0 0 10px}
+.grid p{margin:0;color:var(--inv-muted);font-size:15px;max-width:34ch}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px}
+.steps li{counter-increment:s;border-top:2px solid var(--fg);padding-top:16px}
+.steps li::before{content:counter(s);font-weight:800;font-size:15px;display:block;margin-bottom:8px}
+.steps h3{margin:0 0 6px;font-size:18px}
+.steps p{margin:0;color:var(--muted);font-size:15px}
+.work{background:var(--soft)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:var(--bg);border:1px solid var(--line);padding:28px}
+.card .tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid var(--line);padding:2px 10px;border-radius:99px;margin-bottom:16px}
+.card h3{margin:0 0 8px;font-size:20px;letter-spacing:-.02em}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+form{display:grid;gap:16px}
+label{display:grid;gap:6px;font-size:14px;font-weight:500}
+input,select,textarea{font:400 16px Inter,sans-serif;padding:12px 14px;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:2px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--fg);outline-offset:0;border-color:var(--fg)}
+textarea{min-height:130px;resize:vertical}
+#msg{font-size:14px;color:var(--muted);margin:0;min-height:1.4em}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+@media (max-width:760px){nav a:not(.btn){display:none}.contact{grid-template-columns:1fr;gap:32px}.hero{padding:64px 0}section{padding:64px 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top">ElixTech</a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#work">Work</a>
+      <a class="btn" href="#contact">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Websites and software that work for your business.</h1>
+    <p>ElixTech is a software agency serving businesses in Tanzania and abroad. We build the website, shop or system you need, then keep it running.</p>
+    <div class="row">
+      <a class="btn" href="#contact">Start a project</a>
+      <a class="btn ghost" href="#services">See what we build</a>
+    </div>
+  </div>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2>What we build</h2>
+      <p class="lead">From a first website to the internal tools that run your day-to-day.</p>
+      <div class="grid">
+        <div><h3>Business websites</h3><p>Fast, clear sites that show customers who you are and how to reach you.</p></div>
+        <div><h3>Online shops</h3><p>Product catalogues and checkout flows so you can sell online.</p></div>
+        <div><h3>Custom software</h3><p>Management systems built around how your business actually works.</p></div>
+        <div><h3>Maintenance and support</h3><p>Updates, fixes and improvements after launch, so nothing breaks quietly.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <h2>How a project runs</h2>
+      <p class="lead">Four steps, with you involved at each one.</p>
+      <ol class="steps">
+        <li><h3>Discuss</h3><p>We learn what your business needs and agree on scope and timeline.</p></li>
+        <li><h3>Design</h3><p>You review the layout and flow before we write the code.</p></li>
+        <li><h3>Build</h3><p>We develop and test, sharing progress as pages and features are ready.</p></li>
+        <li><h3>Launch and support</h3><p>We go live together and stay on for fixes and updates.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="wrap">
+      <h2>Concept projects</h2>
+      <p class="lead">Examples of what we can build. These are concepts, not past client work.</p>
+      <div class="cards">
+        <article class="card"><span class="tag">Concept</span><h3>Restaurant website</h3><p>Menu, opening hours, location and a reservation request form.</p></article>
+        <article class="card"><span class="tag">Concept</span><h3>Retail online shop</h3><p>Product listings, cart and order management for a small store.</p></article>
+        <article class="card"><span class="tag">Concept</span><h3>Clinic management system</h3><p>Appointments, patient records and daily schedules in one place.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Tell us about your project</h2>
+        <p class="lead" style="margin-bottom:0">Describe what you need. Your message opens in WhatsApp or email so you can send it to us directly.</p>
+      </div>
+      <form id="f" novalidate>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>What do you need?
+          <select name="type">
+            <option>Business website</option>
+            <option>Online shop</option>
+            <option>Custom software</option>
+            <option>Maintenance and support</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Details<textarea name="details" required></textarea></label>
+        <button class="btn" type="submit">Send message</button>
+        <p id="msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="y"></span> ElixTech</span>
+    <span>We build digital solutions that move businesses forward.</span>
+  </div>
+</footer>
+
+<script>
+// Set your contact details here. WhatsApp: digits only with country code, e.g. "2557XXXXXXXX".
+var CONFIG = { whatsapp: "", email: "" };
+
+document.getElementById("y").textContent = new Date().getFullYear();
+
+document.getElementById("f").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var f = e.target, msg = document.getElementById("msg");
+  var name = f.name.value.trim(), details = f.details.value.trim();
+  if (!name || !details) { msg.textContent = "Please add your name and project details."; return; }
+  var text = "Hello ElixTech, I'm " + name + ".\nI need: " + f.type.value + "\n\n" + details;
+  if (CONFIG.whatsapp) {
+    window.open("https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+    msg.textContent = "Opening WhatsApp. Press send there to deliver your message.";
+  } else if (CONFIG.email) {
+    window.location.href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Project enquiry: " + f.type.value) + "&body=" + encodeURIComponent(text);
+    msg.textContent = "Opening your email app. Press send there to deliver your message.";
+  } else {
+    msg.textContent = "Contact details aren't set up yet, so nothing was sent.";
+  }
+});
+</script>
+</body>
+</html>
